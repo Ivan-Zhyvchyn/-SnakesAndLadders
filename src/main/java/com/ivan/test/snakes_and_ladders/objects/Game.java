@@ -22,4 +22,8 @@ public class Game {
     public void movePlayerToken(Player player, int spacesToMove) {
         gamePlayers.get(player).moveToken(spacesToMove);
     }
+
+    public int rollDice() {
+        return 0;
+    }
 }
