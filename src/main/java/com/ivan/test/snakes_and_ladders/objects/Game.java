@@ -30,4 +30,8 @@ public class Game {
         int randomNum = rn.nextInt(range) + 1;
         return randomNum;
     }
+
+    public String getWinnerId() {
+        return null;
+    }
 }

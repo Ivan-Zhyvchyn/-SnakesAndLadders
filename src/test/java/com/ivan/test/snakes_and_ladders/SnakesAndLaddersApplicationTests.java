@@ -78,5 +78,35 @@ class SnakesAndLaddersApplicationTests {
 
     }
 
+    @Test
+    public void playerWinTheGameWhenTheirTokenOnThe100Square() throws Exception {
+        Game game = new Game();
+        Player newPlayer = new Player("Player1");
+        game.addPlayer(newPlayer);
+
+        int expectedSquareLocation = 100;
+        game.movePlayerToken(newPlayer, 96);
+        game.movePlayerToken(newPlayer, 3);
+
+        Assert.assertEquals(expectedSquareLocation, game.getPositionOfTokenOf(newPlayer));
+        Assert.assertEquals(newPlayer.getPlayerId(), game.getWinnerId());
+
+    }
+
+    @Test
+    public void playerNotWinTheGameWhenTheirTokenReachesThe100thSquare() throws Exception {
+        Game game = new Game();
+        Player newPlayer = new Player("Player1");
+        game.addPlayer(newPlayer);
+
+        int expectedSquareLocation = 97;
+        game.movePlayerToken(newPlayer, 97);
+        game.movePlayerToken(newPlayer, 4);
+
+        Assert.assertEquals(expectedSquareLocation, game.getPositionOfTokenOf(newPlayer));
+        Assert.assertNotEquals(newPlayer.getPlayerId(), game.getWinnerId());
+
+    }
+
 
 }
