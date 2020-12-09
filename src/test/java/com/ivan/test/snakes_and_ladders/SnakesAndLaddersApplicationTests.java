@@ -13,12 +13,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 class SnakesAndLaddersApplicationTests {
 
     private Game game = new Game();
-    private Player player;
 
     @Test
     public void squareOfTokenAtTheStartMustBeOne() throws Exception {
         int expectedSquareLocation = 1;
-        Player newPlayer = new Player(1L);
+        Player newPlayer = new Player("Player1");
         game.addPlayer(newPlayer);
 
         Assert.assertEquals(expectedSquareLocation, game.getPositionOfTokenOf(newPlayer));
@@ -28,10 +27,10 @@ class SnakesAndLaddersApplicationTests {
     public void squareMustBeFourAfterMovingThreeSquareFromSquareOne() throws Exception {
         int expectedSquareLocation = 4;
         int spacesToMove = 3;
-        Player newPlayer = new Player(1L);
+        Player newPlayer = new Player("Player1");
 
         game.addPlayer(newPlayer);
-        game.movePlayerToken(spacesToMove);
+        game.movePlayerToken(newPlayer,spacesToMove);
 
         Assert.assertEquals(expectedSquareLocation, game.getPositionOfTokenOf(newPlayer));
     }
@@ -41,11 +40,11 @@ class SnakesAndLaddersApplicationTests {
         int expectedSquareLocation = 8;
         int firstCountSpacesToMove = 3;
         int secondCountSpacesToMove = 4;
-        Player newPlayer = new Player(1L);
+        Player newPlayer = new Player("Player1");
 
         game.addPlayer(newPlayer);
-        game.movePlayerToken(firstCountSpacesToMove);
-        game.movePlayerToken(secondCountSpacesToMove);
+        game.movePlayerToken(newPlayer,firstCountSpacesToMove);
+        game.movePlayerToken(newPlayer,secondCountSpacesToMove);
 
         Assert.assertEquals(expectedSquareLocation, game.getPositionOfTokenOf(newPlayer));
     }

@@ -2,17 +2,17 @@ package com.ivan.test.snakes_and_ladders.objects;
 
 
 public class Player {
-    private long playerId;
+    private String playerId;
 
-    public Player(long playerId) {
+    public Player(String playerId) {
         this.playerId = playerId;
     }
 
-    public long getPlayerId() {
+    public String getPlayerId() {
         return playerId;
     }
 
-    public void setPlayerId(long playerId) {
+    public void setPlayerId(String playerId) {
         this.playerId = playerId;
     }
 }
