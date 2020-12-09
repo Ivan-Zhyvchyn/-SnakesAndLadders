@@ -2,6 +2,7 @@ package com.ivan.test.snakes_and_ladders.objects;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 public class Game {
 
@@ -24,6 +25,9 @@ public class Game {
     }
 
     public int rollDice() {
-        return 0;
+        Random rn = new Random();
+        int range = 6;
+        int randomNum = rn.nextInt(range) + 1;
+        return randomNum;
     }
 }

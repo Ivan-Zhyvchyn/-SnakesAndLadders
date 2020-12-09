@@ -66,6 +66,7 @@ class SnakesAndLaddersApplicationTests {
         Game game = new Game();
         Player newPlayer = new Player("Player1");
 
+        game.addPlayer(newPlayer);
         int diceResult = 1;
         int expectedSquareLocation = 5;
         while (diceResult != 4) {
