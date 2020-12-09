@@ -100,7 +100,7 @@ class SnakesAndLaddersApplicationTests {
         game.addPlayer(newPlayer);
 
         int expectedSquareLocation = 97;
-        game.movePlayerToken(newPlayer, 97);
+        game.movePlayerToken(newPlayer, 96);
         game.movePlayerToken(newPlayer, 4);
 
         Assert.assertEquals(expectedSquareLocation, game.getPositionOfTokenOf(newPlayer));
