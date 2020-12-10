@@ -1,4 +1,4 @@
-package com.ivan.test.snakes_and_ladders.objects;
+package com.ivan.test.snakes_and_ladders.model;
 
 public class Token {
     private int tokenPosition;

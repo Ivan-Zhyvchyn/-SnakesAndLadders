@@ -1,4 +1,4 @@
-package com.ivan.test.snakes_and_ladders.objects;
+package com.ivan.test.snakes_and_ladders.model;
 
 
 public class Player {
@@ -14,5 +14,12 @@ public class Player {
 
     public void setPlayerId(String playerId) {
         this.playerId = playerId;
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "playerId='" + playerId + '\'' +
+                '}';
     }
 }

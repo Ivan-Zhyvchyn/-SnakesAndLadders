@@ -1,7 +1,7 @@
 package com.ivan.test.snakes_and_ladders;
 
-import com.ivan.test.snakes_and_ladders.objects.Game;
-import com.ivan.test.snakes_and_ladders.objects.Player;
+import com.ivan.test.snakes_and_ladders.model.Game;
+import com.ivan.test.snakes_and_ladders.model.Player;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;

@@ -1,10 +1,15 @@
-package com.ivan.test.snakes_and_ladders.objects;
+package com.ivan.test.snakes_and_ladders.model;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.MapSerializer;
+
+import java.util.*;
 
 public class Game {
+
+    public long id;
 
     public Map<Player, Token> gamePlayers = new HashMap<>();
     private int boardSize = 100;
@@ -41,4 +46,18 @@ public class Game {
     public String getWinnerId() {
         return this.winnerId;
     }
+
+    public long getId() {
+        return id;
+    }
+
+    public Map<Player, Token> getGamePlayers() {
+        return gamePlayers;
+    }
+
+    @JsonIgnore
+    public Set<Player> getGamePlayersSet() {
+        return this.gamePlayers.keySet();
+    }
+
 }
