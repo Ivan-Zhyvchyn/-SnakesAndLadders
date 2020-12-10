@@ -30,26 +30,23 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 @RequestMapping(value = RootController.API_BASE_PATH, produces = "application/vnd.api+json")
 public class RootController {
 
-	public static final String API_BASE_PATH = "/api";
+    public static final String API_BASE_PATH = "/api";
 
-	@GetMapping
+    @GetMapping
     ResponseEntity<RepresentationModel<?>> root() {
 
-		RepresentationModel<?> resourceSupport = new RepresentationModel<>();
+        RepresentationModel<?> resourceSupport = new RepresentationModel<>();
 
-		resourceSupport.add(linkTo(methodOn(RootController.class).root()).withSelfRel());
+        resourceSupport.add(linkTo(methodOn(RootController.class).root()).withSelfRel());
 
-		Link selfLink = linkTo(GameController.class).slash("games").withRel("games");
-		Link templatedLink = Link.of(selfLink.getHref() + "{?page[number],page[size]}").withRel("games");
+        Link selfLink = linkTo(GameController.class).slash("games").withRel("games");
+        Link templatedLink = Link.of(selfLink.getHref() + "{?page[number],page[size]}").withRel("games");
 
-		resourceSupport.add(templatedLink);
+        resourceSupport.add(templatedLink);
 
-//		selfLink = linkTo(DirectorController.class).slash("directors").withRel("directors");
-//		templatedLink = Link.of(selfLink.getHref() + "{?page[number],page[size]}").withRel("directors");
+        resourceSupport.add(templatedLink);
 
-		resourceSupport.add(templatedLink);
-
-		return ResponseEntity.ok(resourceSupport);
-	}
+        return ResponseEntity.ok(resourceSupport);
+    }
 
 }

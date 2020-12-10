@@ -12,7 +12,7 @@ public class Game {
     public long id;
 
     public Map<Player, Token> gamePlayers = new HashMap<>();
-    private int boardSize = 100;
+    private final static int BOARD_SIZE = 100;
     private String winnerId;
 
     public Game() {
@@ -28,9 +28,9 @@ public class Game {
 
     public void movePlayerToken(Player player, int spacesToMove) {
         int futureTokenPosition = spacesToMove + gamePlayers.get(player).getTokenPosition();
-        if(futureTokenPosition > 100){
+        if (futureTokenPosition > BOARD_SIZE) {
             return;
-        }else if(futureTokenPosition == 100){
+        } else if (futureTokenPosition == BOARD_SIZE) {
             this.winnerId = player.getPlayerId();
         }
         gamePlayers.get(player).moveToken(spacesToMove);

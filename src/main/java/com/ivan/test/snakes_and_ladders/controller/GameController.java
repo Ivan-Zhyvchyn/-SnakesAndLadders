@@ -21,7 +21,7 @@ public class GameController {
     }
 
     @PostMapping("/moving")
-    public ResponseEntity<?> newMovie(@RequestBody MoveRequest request) {
+    public ResponseEntity<EntityModel<Game>> newMove(@RequestBody MoveRequest request) {
 
         Game game = gameService.moveToken(request.getPlayerId());
         return ResponseEntity.ok(EntityModel.of(game));

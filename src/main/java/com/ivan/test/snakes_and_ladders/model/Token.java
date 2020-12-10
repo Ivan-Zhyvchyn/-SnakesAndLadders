@@ -7,7 +7,7 @@ public class Token {
         this.tokenPosition = 1;
     }
 
-    public int moveToken(int countOfMoving){
+    public int moveToken(int countOfMoving) {
         tokenPosition += countOfMoving;
         return this.tokenPosition;
     }
