@@ -8,3 +8,23 @@ curl --location --request POST 'localhost:8080/api/moving' \
 --data-raw '{
     "playerId" : "human"
 }'
+
+Response example :
+
+{
+    "data": {
+        "id": "0",
+        "type": "games",
+        "attributes": {
+            "gamePlayers": {
+                "Player{playerId='machine'}": {
+                "tokenPosition": 1
+                },
+                "Player{playerId='human'}": {
+                "tokenPosition": 3
+            }
+        },
+            "winnerId": null
+        }
+    }
+}
