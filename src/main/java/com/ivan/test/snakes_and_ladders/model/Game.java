@@ -28,9 +28,9 @@ public class Game {
 
     public void movePlayerToken(Player player, int spacesToMove) {
         int futureTokenPosition = spacesToMove + gamePlayers.get(player).getTokenPosition();
-        if(futureTokenPosition > 100){
+        if(futureTokenPosition > boardSize){
             return;
-        }else if(futureTokenPosition == 100){
+        }else if(futureTokenPosition == boardSize){
             this.winnerId = player.getPlayerId();
         }
         gamePlayers.get(player).moveToken(spacesToMove);
