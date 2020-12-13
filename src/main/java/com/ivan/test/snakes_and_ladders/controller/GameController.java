@@ -1,8 +1,8 @@
 package com.ivan.test.snakes_and_ladders.controller;
 
-import com.ivan.test.snakes_and_ladders.service.GameService;
 import com.ivan.test.snakes_and_ladders.dto.MoveRequest;
 import com.ivan.test.snakes_and_ladders.model.Game;
+import com.ivan.test.snakes_and_ladders.service.GameService;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

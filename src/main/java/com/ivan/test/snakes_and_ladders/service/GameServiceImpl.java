@@ -28,7 +28,10 @@ public class GameServiceImpl implements GameService {
 
     @Override
     public Game moveToken(String playerId) {
-        Optional<Player> playerOptional = game.getGamePlayersSet().stream().filter(player -> player.getPlayerId().equals(playerId)).findFirst();
+        Optional<Player> playerOptional = game.getGamePlayersSet()
+                .stream()
+                .filter(player -> player.getPlayerId().equals(playerId))
+                .findFirst();
 
         if (playerOptional.isPresent()) {
             game.movePlayerToken(playerOptional.get(), game.rollDice());

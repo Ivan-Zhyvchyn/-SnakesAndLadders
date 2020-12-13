@@ -44,8 +44,6 @@ public class RootController {
 
         resourceSupport.add(templatedLink);
 
-        resourceSupport.add(templatedLink);
-
         return ResponseEntity.ok(resourceSupport);
     }
 
